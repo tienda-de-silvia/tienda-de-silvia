@@ -1,0 +1,30 @@
+.footer {
+  background-color: rgb(30, 30, 30);
+  padding: 20px 15px 20px 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  gap: 30px;
+}
+.footer-redes-container {
+  padding-left: 20px;
+}
+.footer-redes-container_red {
+  height: 30px;
+}
+.footer-about-container {
+  padding-left: 20px;
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer-redes-container_red {
+    height: 30px;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */
