@@ -1,0 +1,234 @@
+@use 'variables' as v;
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(30,30,30);
+}
+.header{
+    justify-content: space-between;
+    position: fixed;
+    width: 100vw;
+    transition: all 0.7s;
+    display: none;
+
+    &_logo{
+        width: 200px;
+        transition: all 0.7s;
+    }
+    &_links{
+        color: white;
+        padding: 10px 35px 0 0;
+        display: flex;
+        gap: 150px;
+        align-items: start;    
+        &-container{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            &-link{
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+                transition: all 0.7s;
+                &:hover{
+                    border-bottom: 2px solid white;
+                }
+            }
+            &-icon{
+                border-radius: 50%;
+                background-color: white;
+                height: 30px;
+            }
+        }
+        
+    }
+}
+.main{
+
+    &-Der{
+        width: 100vw;
+        height: 500px;
+        background-image: url('imagenes/tela1.png');
+        background-size: cover;
+        background-repeat: repeat;
+        background-position:  center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 10px 20px 10px 20px;
+            &_suelto{
+                color: white;
+                &_title{
+                    font-family: 'Kanit', sans-serif;
+                    font-weight: 700;
+                    font-size: 55px;
+                }
+                &_descripcion{
+                    font-size: 20px;
+
+                }
+            }
+            &_ventana{
+                
+                height: 10px;
+                width: 100%;
+                background-color: white;
+            }
+        }
+    }
+    &-Izq{
+        width: 100vw;
+        height: 500px;
+        background-image: url('imagenes/main-iz.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:  center;
+        background-color: rgb(218,218,218);
+    }
+}
+.headerCelu{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 5px 10px 5px 10px;
+    transition: all 0.7s;
+    height: 90px;
+    align-items: center;
+    &_logo{
+        height: 100%;
+    }
+    &_menu{
+        height: 45%;
+        &-img{
+            height: 100%;
+        }
+    }
+}
+.ubicacion{
+    background-color: rgb(242, 242, 242);
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;
+    &-container{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        &_descripcion{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            &-text{
+                padding: 4px 25px 4px 25px;
+                font-size: 17px;
+            }
+            &-title{
+                font-family: 'Roboto Slab', serif;  
+                font-size: 27px;
+            }
+        }
+        &_mapa{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &-text{
+                letter-spacing: 6px;
+                color: rgb(114, 109, 109);
+            }
+            &-element{
+                height: 300px;
+                width: 300px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.footer{
+    background-color: rgb(29, 28, 27);
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1200px)  {
+    .main{
+        &-Der{
+            background-size: contain;
+        }
+        &-Izq{
+            background-size: contain;
+        }
+    }
+}
+
+
+@media (min-width: 1200px){
+    .headerCelu{
+        display: none;
+    }
+    .header{
+        display: flex;
+    }
+    .main{
+        display: flex;
+        &-Der{
+            height: 100vh;
+            &-container{
+                width: 600px;
+                &_suelto{
+
+                    &_title{
+                        font-weight: 700;
+                        
+                        font-size: 80px;
+                    }
+                    &_descripcion{
+                        font-size: 20px;
+                    }
+                }
+                &_ventana{
+
+                    padding: 5px 10px 5px 10px;
+                }
+                
+            }
+        }
+        &-Izq{
+            height: 100vh;
+        }
+    }
+    .ubicacion{
+        padding: 130px 0px 130px 0px;
+        &-container{
+            flex-direction: row;
+            &_descripcion{
+                padding: 0 20px 0 20px;
+                width: 600px;
+                &-text{
+                    font-size: 30px;
+                    text-align: start;
+                }
+                &-title{
+                    font-size: 70px;
+                    padding: 0 25px 0 25px;
+                }
+            }
+            &_mapa{
+                &-element{
+                    width: 600px;
+                    height: 600px;
+                }
+            }
+        }
+    }
+}

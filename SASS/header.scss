@@ -1,0 +1,182 @@
+@use 'variables' as v;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: none;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(192, 197, 192);
+    padding: 5px 20px 5px 20px;
+    background-color: rgb(181,181,181);
+
+    &_logo{
+        width: 70px;
+    }
+    &_links{
+        display: flex;
+        width: 800px;
+        justify-content: space-between;
+        align-items: center;
+        &-container{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px 10px 20px;
+            &-icon{
+                height: 20px;
+            }
+            &-link{
+                text-decoration: none;
+                color: black;
+                &:hover{
+                    border-bottom: 1px solid black;
+                }       
+            }
+        }
+    }
+}
+.containerSeleccionado{
+    background-color: rgb(57, 60, 57);
+    &-link{
+        color:white;
+    }
+    &-icon{
+        background-color: white;
+        border-radius: 50%;
+    }
+}
+.headerCelu{
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    padding: 2px 5px 2px 5px;
+    width: 100%;
+    background-color: rgb(181,181,181);
+    border-bottom: 1px solid rgb(192, 197, 192);
+    &_logo{
+        width: 70px;
+    }
+    &_menu{
+        display: flex;
+        align-items: center;
+        &-img{
+            width: 40px;
+        }
+    }
+}
+.contenedor{
+    padding: 100px 10px 26px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(130px,1fr));
+    justify-items: center;
+    gap: 10px;
+
+    &-elemento{
+        border: 1px solid rgb(231, 231, 231);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 20px 25px 20px;
+        &:hover{
+            cursor: pointer;
+        }
+        &_img{
+            height: 150px;
+
+        }
+        &_descripcion{
+            text-align:center
+        }
+        &_boton{
+            color: white;
+            padding: 5px 10px 5px 10px;
+            border: none;
+            background-color: v.$verde-principal;
+            border-radius: 25px;
+        }
+    }
+}
+
+.ventanaImagen{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(32,28,28,0.5);
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    &-container{
+        height: 500px;
+        width: 300px;
+        background-color: white;
+        padding: 10px 10px 10px 10px;
+        border-radius: 20px;
+        &_close{
+            display: flex;
+            justify-content: end;
+            height: 10%;
+            align-items: center;
+            &-element{
+                height: 40px;
+            }
+        }
+        &_img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90%;
+            background-color: rgb(225,225,225);
+            &-element{
+                height: 350px;
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 1200px){
+    .headerCelu{
+        display: none;
+    }
+    .header{
+        display: flex;
+        position: fixed;
+        width: 100%;
+
+    }
+    .contenedor{
+        grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+        &-elemento{
+            padding: 35px 30px 35px 30px;
+            &_img{
+                height: 300px;
+            }
+            &_descripcion{
+                width: 300px;
+            }
+        }
+    }
+    .ventanaImagen{
+        &-container{
+            width: 1000px;
+            height: 900px;
+            &_close{
+
+                &-element{
+                    height: 50px;
+                }
+            }
+            &_img{
+                &-element{
+                    height: 750px;
+                }
+            }
+        }
+    }
+}
